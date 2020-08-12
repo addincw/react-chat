@@ -1,8 +1,11 @@
 import React from 'react';
+import queryString from 'query-string';
 
 import './Chat.css';
 
-const Chat = () => {
+const Chat = ({ location }) => {
+    const { username, group } = queryString.parse(location.search)
+
     return (
         <section className="section">
             <div className="container">
@@ -37,8 +40,8 @@ const Chat = () => {
                                                 <div className="chat_ib">
                                                     <h5>
                                                         <label className="label label-default">You're in</label>
-                                                ... Group
-                                            </h5>
+                                                        {group} Group
+                                                    </h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -49,7 +52,7 @@ const Chat = () => {
                                     <div className="type_msg">
                                         <div className="input_msg_write">
                                             <input type="text" className="write_msg" placeholder="Type a message" />
-                                            <button className="msg_send_btn" onclick="sendMessage()">
+                                            <button className="msg_send_btn">
                                                 <i className="fas fa-paper-plane" aria-hidden="true"></i>
                                             </button>
                                         </div>

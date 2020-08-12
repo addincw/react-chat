@@ -25,6 +25,8 @@ const LoginCard = () => {
                             <div className="select is-fullwidth">
                                 <select name="group">
                                     <option>Pilih Group Chat</option>
+                                    <option value="php">PHP</option>
+                                    <option value="javascript">Javascript</option>
                                 </select>
                             </div>
                             <span className="icon is-left">
